@@ -2,26 +2,33 @@ package main
 
 import (
 	"fmt"
-	"math"
 )
 
 func main() {
 	const inflationRate = 0.1
-	var investedAmount float64
-	var years, returnRate float64
+	// var investedAmount float64
+	// var years, returnRate float64
 
-	fmt.Print("Investment Amount: ")
-	fmt.Scan(&investedAmount)
+	var totalIncome int64
+	var tax int64
 
-	fmt.Print("Amount of Years it will be invested for : ")
-	fmt.Scan(&years)
+	// fmt.Print("Investment Amount: ")
+	// fmt.Scan(&investedAmount)
 
-	fmt.Print("What is the return rate: ")
-	fmt.Scan(&returnRate)
+	fmt.Print("Total Income: ")
+	fmt.Scan(&totalIncome)
+	// fmt.Print("Amount of Years it will be invested for : ")
+	// fmt.Scan(&years)
 
-	futureValue := float64(investedAmount) * math.Pow(1+returnRate/100, float64(years))
+	fmt.Print("Tax Rate: ")
+	fmt.Scan(&tax)
 
-	futureRealValue := futureValue / math.Pow(1+inflationRate/100, years)
-	fmt.Println("Future value is ", futureValue)
-	fmt.Println("Future Real value is ", futureRealValue)
+	// futureValue := float64(investedAmount) * math.Pow(1+returnRate/100, float64(years))
+
+	profitBefore, profitAfter := CalRev(totalIncome, tax)
+
+	// futureRealValue := futureValue / math.Pow(1+inflationRate/100, years)
+	fmt.Println("Profit Before Tax", profitBefore)
+	fmt.Println("Profit After Tax", profitAfter)
+	fmt.Println("Tax", tax) // fmt.Println("Future Real value is ", futureRealValue)
 }
