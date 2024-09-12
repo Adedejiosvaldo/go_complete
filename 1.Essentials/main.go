@@ -30,5 +30,6 @@ func main() {
 	// futureRealValue := futureValue / math.Pow(1+inflationRate/100, years)
 	fmt.Println("Profit Before Tax", profitBefore)
 	fmt.Println("Profit After Tax", profitAfter)
-	fmt.Println("Tax", tax) // fmt.Println("Future Real value is ", futureRealValue)
+	// Allows us to choose what decimal point we want
+	fmt.Printf("The Tex is %.1f\n", float64(profitAfter)) // fmt.Println("Future Real value is ", futureRealValue)
 }
